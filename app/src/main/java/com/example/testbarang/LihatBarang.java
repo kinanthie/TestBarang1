@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -88,5 +91,17 @@ public class LihatBarang extends AppCompatActivity {
         }
         public static Intent getActIntent(Activity activity){
         return new Intent(activity, LihatBarang.class); }
+
+    public void onDeleteData(Barang barang, final int position){
+
+        if(database!=null){
+            database.child("barang").child(barang.getKode()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    Toast.makeText(LihatBarang.this, "succes delete", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+    }
 
     }

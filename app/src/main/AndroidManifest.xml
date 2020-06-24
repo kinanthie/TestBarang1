@@ -14,6 +14,7 @@
         <activity android:name=".LihatBarang"
             android:label="@string/txtJudul3">
         </activity>
+        <activity android:name=".TambahData"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

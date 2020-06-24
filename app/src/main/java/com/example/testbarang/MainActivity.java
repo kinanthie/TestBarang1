@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         bTambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 startActivity(TambahData.getActIntent(MainActivity.this));
             }
         });
